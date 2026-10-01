@@ -1,9 +1,8 @@
-# Oukitel Power Station - Universal Python MQTT Bridge
-
-A standalone, ultra-lightweight, cross-platform Python bridge to connect **Oukitel Portable Power Stations** (P2001 Plus, P2001, P5000, BP2000, and compatible models) to any **MQTT ecosystem**.
-
 <div align="center">
-  <img src="docs/images/05_device_dashboard.png" width="85%" alt="Oukitel Telemetry and Control" />
+  <img src="icon.png" width="130" height="130" alt="Oukitel Power Station Icon" />
+  <h1>Oukitel Power Station - Universal Python MQTT Bridge</h1>
+
+  <p>A standalone, ultra-lightweight, cross-platform Python bridge to connect <b>Oukitel Portable Power Stations</b> (P2001 Plus, P2001, P5000, BP2000, and compatible models) to any <b>MQTT ecosystem</b>.</p>
 
   [![GitHub Release](https://img.shields.io/github/v/release/VictorCV-DAM/oukitel-portable-bridge?style=for-the-badge&color=blue)](https://github.com/VictorCV-DAM/oukitel-portable-bridge/releases)
   [![Python 3.9+](https://img.shields.io/badge/Python-3.9%2B-brightgreen?style=for-the-badge&logo=python)](https://www.python.org/)
@@ -12,6 +11,9 @@ A standalone, ultra-lightweight, cross-platform Python bridge to connect **Oukit
   [![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-Donate-orange?style=for-the-badge&logo=buy-me-a-coffee)](https://buymeacoffee.com/VictorCV)
   [![PayPal](https://img.shields.io/badge/PayPal-Donate-blue?style=for-the-badge&logo=paypal)](https://paypal.me/victorcava)
   [![Ko-fi](https://img.shields.io/badge/Ko--fi-Donate-red?style=for-the-badge&logo=ko-fi)](https://ko-fi.com/victorcv)
+
+  <br/><br/>
+  <img src="docs/images/05_device_dashboard.png" width="85%" alt="Oukitel Telemetry and Control" />
 </div>
 
 ---
