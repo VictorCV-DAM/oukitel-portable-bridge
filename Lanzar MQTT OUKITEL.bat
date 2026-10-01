@@ -1,2 +1,0 @@
-@echo off
-start /min conhost.exe powershell.exe -ExecutionPolicy Bypass -NoExit -Command "$Host.UI.RawUI.BackgroundColor = 'DarkBlue'; $Host.UI.RawUI.ForegroundColor = 'White'; Clear-Host; & '%~dp0Iniciar_Oukitel_V4.ps1'"
