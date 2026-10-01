@@ -1,20 +1,23 @@
-# Oukitel P2001 - Home Assistant MQTT Bridge (V4 Cloud)
-[Console]::Title = "Extraer datos OUKITEL MQTT"
-$Host.UI.RawUI.WindowTitle = "Extraer datos OUKITEL MQTT"
-Write-Host -NoNewline "$([char]27)]0;Extraer datos OUKITEL MQTT`a"
-# Establecer el directorio de trabajo a la ubicación del script
+# Oukitel P2001 / Power Stations - Home Assistant MQTT Bridge (Standalone)
+[Console]::Title = "Oukitel Power Station MQTT Bridge"
+$Host.UI.RawUI.WindowTitle = "Oukitel Power Station MQTT Bridge"
+Write-Host -NoNewline "$([char]27)]0;Oukitel Power Station MQTT Bridge`a"
 Set-Location -Path $PSScriptRoot
 
 Write-Host "========================================" -ForegroundColor Cyan
-Write-Host "   Oukitel P2001 Plus - MQTT Bridge V4" -ForegroundColor Cyan
-Write-Host "   Cloud API | Portable Python 3.10" -ForegroundColor Cyan
+Write-Host "   Oukitel Power Station - MQTT Bridge" -ForegroundColor Cyan
+Write-Host "   Cloud API | Standalone Service" -ForegroundColor Cyan
 Write-Host "========================================" -ForegroundColor Cyan
 Write-Host ""
 
-# Ejecutar Python portable con la ruta al script de Python
-& "$PSScriptRoot\python_portable\python.exe" "$PSScriptRoot\oukitel_cloud_mqtt.py"
+# Run python script
+if (Test-Path "$PSScriptRoot\python_portable\python.exe") {
+    & "$PSScriptRoot\python_portable\python.exe" "$PSScriptRoot\oukitel_cloud_mqtt.py"
+} else {
+    python "$PSScriptRoot\oukitel_cloud_mqtt.py"
+}
 
 Write-Host ""
-Write-Host "[FIN] El script ha terminado." -ForegroundColor Green
+Write-Host "[END] Bridge execution stopped." -ForegroundColor Green
 
-Read-Host -Prompt "Presiona Enter para salir..."
+Read-Host -Prompt "Press Enter to exit..."
