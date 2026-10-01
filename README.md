@@ -4,7 +4,7 @@
 
   <p>A standalone, ultra-lightweight, cross-platform Python bridge to connect <b>Oukitel Portable Power Stations</b> (P2001 Plus, P2001, P5000, BP2000, and compatible models) to any <b>MQTT ecosystem</b>.</p>
 
-  [![GitHub Release](https://img.shields.io/github/v/release/VictorCV-DAM/oukitel-portable-bridge?style=for-the-badge&color=blue)](https://github.com/VictorCV-DAM/oukitel-portable-bridge/releases)
+  [![GitHub Tag](https://img.shields.io/github/v/tag/VictorCV-DAM/oukitel-portable-bridge?style=for-the-badge&color=blue&label=RELEASE)](https://github.com/VictorCV-DAM/oukitel-portable-bridge/tags)
   [![Python 3.9+](https://img.shields.io/badge/Python-3.9%2B-brightgreen?style=for-the-badge&logo=python)](https://www.python.org/)
   [![Platform](https://img.shields.io/badge/Platform-Linux%20%7C%20Windows%20%7C%20macOS%20%7C%20Raspberry%20Pi-lightgrey?style=for-the-badge)](https://github.com/VictorCV-DAM/oukitel-portable-bridge)
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
