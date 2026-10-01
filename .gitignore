@@ -1,0 +1,15 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Local secrets & private credentials
+config.json
+
+# Portable environment
+python_portable/
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp

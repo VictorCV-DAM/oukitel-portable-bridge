@@ -1,0 +1,24 @@
+{
+  "cloud": {
+    "_comment_region": "[EXPERIMENTAL] Select server region: 'EU' (Europe - Verified), 'US' (North America - Experimental), 'CN' (China - Experimental), or 'CUSTOM' to use manual fields.",
+    "region": "EU",
+    "email": "your_oukitel_app_email@example.com",
+    "password": "your_password",
+    "base_url": "https://iot-api.acceleronix.io",
+    "user_domain": "E.SP.4294967410",
+    "user_domain_secret": "3aRNUwWahjyANa7WfBK2wCCkxCexB6nXxKJwXxfePvzf",
+    "appid": "277",
+    "appversion": "3.7.5"
+  },
+  "mqtt": {
+    "broker": "192.168.1.XXX",
+    "port": 1883,
+    "user": "mqtt_user",
+    "password": "mqtt_password",
+    "topic_base": "homeassistant/sensor/oukitel"
+  },
+  "polling": {
+    "interval_seconds": 10,
+    "wake_interval_seconds": 25
+  }
+}
