@@ -35,6 +35,33 @@ else:
     BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 CONFIG_FILE = os.path.join(BASE_DIR, "config.json")
+ICON_FILE = os.path.join(BASE_DIR, "icon.ico")
+
+
+def set_windows_console_icon():
+    """Sets the console window and taskbar icon on Windows if icon.ico is present."""
+    if not sys.platform.startswith("win"):
+        return
+    if not os.path.exists(ICON_FILE):
+        return
+    try:
+        import ctypes
+        hwnd = ctypes.windll.kernel32.GetConsoleWindow()
+        if hwnd:
+            IMAGE_ICON = 1
+            LR_LOADFROMFILE = 0x00000010
+            WM_SETICON = 0x0080
+            ICON_SMALL = 0
+            ICON_BIG = 1
+            hicon_small = ctypes.windll.user32.LoadImageW(None, ICON_FILE, IMAGE_ICON, 16, 16, LR_LOADFROMFILE)
+            hicon_big = ctypes.windll.user32.LoadImageW(None, ICON_FILE, IMAGE_ICON, 32, 32, LR_LOADFROMFILE)
+            if hicon_small:
+                ctypes.windll.user32.SendMessageW(hwnd, WM_SETICON, ICON_SMALL, hicon_small)
+            if hicon_big:
+                ctypes.windll.user32.SendMessageW(hwnd, WM_SETICON, ICON_BIG, hicon_big)
+    except Exception:
+        pass
+
 
 # Configuration of available cloud server regions
 # [NOTE]: 'EU' is the primary verified region tested on physical hardware.
@@ -461,7 +488,8 @@ def configurar_descubrimiento_ha(client: mqtt.Client):
 # --- BUCLE PRINCIPAL ---
 # ==========================================
 def main():
-    log.info("Iniciando Oukitel Cloud MQTT Bridge V4 (100% Autónomo - Sin Móvil/ADB)...")
+    set_windows_console_icon()
+    log.info("Starting Oukitel Cloud MQTT Bridge (100% Autonomous - Zero Mobile/ADB)...")
     log.info("Configuración: %s", CONFIG_FILE)
     if SELECTED_REGION in REGION_SERVERS:
         reg_info = REGION_SERVERS[SELECTED_REGION]

@@ -114,10 +114,12 @@ Edit `config.json` with your settings:
 python3 oukitel_cloud_mqtt.py
 ```
 
-#### Windows Convenience Launchers
-For Windows users, two ready-to-use launch scripts are provided:
+#### Windows Convenience Launchers & Desktop Shortcut
+For Windows users, ready-to-use launch scripts and desktop shortcuts are provided:
+* **`Oukitel MQTT Bridge.lnk`**: Pre-configured desktop/folder shortcut featuring the official Oukitel station icon.
+* **`create_shortcut.ps1`**: Helper script that automatically creates or updates the desktop shortcut with `icon.ico`.
 * **`start_bridge.bat`**: Double-clickable batch file with automated environment checks.
-* **`start_bridge.ps1`**: PowerShell script for advanced execution or background tasks.
+* **`start_bridge.ps1`**: PowerShell script that dynamically assigns the custom Oukitel icon to the console window and taskbar.
 
 #### Linux Systemd Service (Optional, for 24/7 background operation)
 Create `/etc/systemd/system/oukitel-bridge.service`:
