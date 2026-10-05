@@ -13,7 +13,7 @@
   [![Ko-fi](https://img.shields.io/badge/Ko--fi-Donate-red?style=for-the-badge&logo=ko-fi)](https://ko-fi.com/victorcv)
 
   <br/><br/>
-  <img src="docs/images/05_device_dashboard.png" width="85%" alt="Oukitel Telemetry and Control" />
+  <img src="docs/images/06_terminal_live.png" width="90%" alt="Oukitel Bridge Live Terminal Execution" />
 </div>
 
 ---
@@ -62,6 +62,10 @@ It is completely agnostic and easily integrates into:
   - `homeassistant/number/oukitel_ac_charging_limit`: AC upper charge rate limit (3% to 100%).
   - `homeassistant/select/oukitel_output_frequency` / `oukitel_output_voltage`: Inverter frequency and voltage settings.
   - `homeassistant/button/oukitel_reload`: Trigger instant session reload and discovery update.
+
+<p align="center">
+  <img src="docs/images/05_device_dashboard.png" width="85%" alt="Home Assistant MQTT Auto-Discovered Dashboard" />
+</p>
 
 ---
 
