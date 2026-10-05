@@ -1,2 +1,9 @@
 @echo off
-start /min conhost.exe powershell.exe -ExecutionPolicy Bypass -NoExit -Command "$Host.UI.RawUI.BackgroundColor = 'DarkBlue'; $Host.UI.RawUI.ForegroundColor = 'White'; Clear-Host; & '%~dp0start_bridge.ps1'"
+title Oukitel Power Station MQTT Bridge
+cd /d "%~dp0"
+powershell.exe -ExecutionPolicy Bypass -NoExit -Command "& '%~dp0start_bridge.ps1'"
+if %ERRORLEVEL% NEQ 0 (
+    echo.
+    echo [ERROR] Bridge process exited with code %ERRORLEVEL%.
+    pause
+)

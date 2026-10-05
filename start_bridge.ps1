@@ -16,7 +16,9 @@ if ([System.IO.File]::Exists($iconPath)) {
         [DllImport("kernel32.dll")]
         public static extern IntPtr GetConsoleWindow();
 '@
-        $type = Add-Type -MemberDefinition $sig -Name "Win32IconHelper" -Namespace "OukitelBridge" -PassThru
+        if (-not ([System.Management.Automation.PSTypeName]"OukitelBridge.Win32IconHelper").Type) {
+            Add-Type -MemberDefinition $sig -Name "Win32IconHelper" -Namespace "OukitelBridge" | Out-Null
+        }
         $hWnd = [OukitelBridge.Win32IconHelper]::GetConsoleWindow()
         if ($hWnd -ne [IntPtr]::Zero) {
             # LoadIcon small (16x16) and big (32x32)
