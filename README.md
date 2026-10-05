@@ -73,7 +73,7 @@ It is completely agnostic and easily integrates into:
 
 1. **Dual Transport Architecture**: Connects directly via **Local LAN (TCP 6607, AES-128)** for sub-second push updates, falling back seamlessly to Cloud polling if off-site.
 2. **Individual Port Breakdown**: Discrete wattage monitoring for every Type-C, USB, DC, and AC outlet.
-3. **Physics-Based Autonomy Engine**: Calculates true net energy balance $$\text{net\_power} = \text{total\_input} - \text{total\_output}$$, eliminating firmware display glitches and 99-hour LCD overflows.
+3. **Physics-Based Autonomy Engine**: Calculates true net energy balance (`net_power = total_input - total_output`), eliminating firmware display glitches and 99-hour LCD overflows.
 4. **Native Fault Alarms**: Ready-to-use ENUM states in Home Assistant for one-click automation rules (thermal warnings, overload shedding, low battery protection).
 5. **Zero Smartphone / Zero Android Emulator**: No Nox, Bluestacks, or phones running 24/7. Fully autonomous daemon.
 6. **Tiny Footprint (~30 MB RAM)**: Ultra-lightweight and battery-friendly.
