@@ -42,20 +42,39 @@ It is completely agnostic and easily integrates into:
 * **Custom Python / Go / Rust scripts or IoT dashboards**.
 
 ### Published Topics & Payload Overview
-* **State / Telemetry:** `homeassistant/sensor/oukitel/<device_sn>/state` (Comprehensive JSON payload with battery %, AC/DC input/output watts, temperatures, charging status, etc.)
-* **Switch States:** `homeassistant/sensor/oukitel/<device_sn>/switch/<ac|dc|usb>/state` (`ON` / `OFF`)
-* **Switch Control:** Send `ON` or `OFF` to `homeassistant/sensor/oukitel/<device_sn>/switch/<ac|dc|usb>/set` to toggle outputs.
+* **Battery & Power Balance:**
+  - `homeassistant/sensor/oukitel/battery`: State of charge percentage (%).
+  - `homeassistant/sensor/oukitel/input_watts` / `output_watts`: Real-time total power (W).
+  - `homeassistant/sensor/oukitel/ac_input_watts` / `dc_input_watts`: Grid & MPPT solar charging wattage (W).
+  - `homeassistant/sensor/oukitel/remain_time`: True battery autonomy countdown while net discharging (min).
+  - `homeassistant/sensor/oukitel/remain_charging_time`: Dynamic estimate to reach 100% full capacity (min).
+  - `homeassistant/sensor/oukitel/remaining_time`: Station LCD display equivalent time (min).
+* **Individual Port Telemetry (Zero "Unknown" States):**
+  - `homeassistant/sensor/oukitel/ac_output_power` / `ac_output_voltage`: 230V inverter wattage and voltage.
+  - `homeassistant/sensor/oukitel/typec1_power` through `typec4_power`: Dedicated wattage for all 4 USB Type-C ports.
+  - `homeassistant/sensor/oukitel/usb_a_power` / `usb_c_qc_power`: USB-A and Quick Charge port wattages.
+  - `homeassistant/sensor/oukitel/dc_output_power`, `dc_output_voltage`, `dc_output_current`: 12V car socket metrics.
+* **Health & Fault Alarms:**
+  - `homeassistant/sensor/oukitel/hardware_fault_status`: Standardized ENUM sensor (`Normal`, `High Temperature Warning`, `Over-Temperature`, `Under-Temperature`, `Low Battery Warning`, `Critical Low Battery`, `Overload Protection`, `Hardware Fault`).
+  - `homeassistant/sensor/oukitel/hardware_fault_status/attributes`: JSON attributes including `fault_details` and `possible_states`.
+* **Remote Switches & Settings:**
+  - `homeassistant/switch/oukitel/ac_switch`, `dc_switch`, `usb_switch`: Toggle outputs (`ON`/`OFF`).
+  - `homeassistant/number/oukitel_ac_charging_limit`: AC upper charge rate limit (3% to 100%).
+  - `homeassistant/select/oukitel_output_frequency` / `oukitel_output_voltage`: Inverter frequency and voltage settings.
+  - `homeassistant/button/oukitel_reload`: Trigger instant session reload and discovery update.
 
 ---
 
 ## ✨ Key Features & Advantages
 
-1. **Zero Smartphone / Zero Android Emulator**: No Nox, Bluestacks, or phones running 24/7. Connects straight to the cloud API.
-2. **Tiny Footprint (~30 MB RAM)**: Extremely lightweight compared to heavy virtualization or mobile emulators.
-3. **Continuous Session Management**: Transparent token auto-renewal without dropped connections.
-4. **Bidirectional Control**: Full remote switching of AC (230V), DC (12V), and USB power ports.
-5. **Keep-Alive Heartbeat**: Prevents the battery station's Wi-Fi module from entering silent sleep mode.
-6. **Multi-Region Cloud Coverage**:
+1. **Dual Transport Architecture**: Connects directly via **Local LAN (TCP 6607, AES-128)** for sub-second push updates, falling back seamlessly to Cloud polling if off-site.
+2. **Individual Port Breakdown**: Discrete wattage monitoring for every Type-C, USB, DC, and AC outlet.
+3. **Physics-Based Autonomy Engine**: Calculates true net energy balance $$\text{net\_power} = \text{total\_input} - \text{total\_output}$$, eliminating firmware display glitches and 99-hour LCD overflows.
+4. **Native Fault Alarms**: Ready-to-use ENUM states in Home Assistant for one-click automation rules (thermal warnings, overload shedding, low battery protection).
+5. **Zero Smartphone / Zero Android Emulator**: No Nox, Bluestacks, or phones running 24/7. Fully autonomous daemon.
+6. **Tiny Footprint (~30 MB RAM)**: Ultra-lightweight and battery-friendly.
+7. **Keep-Alive Heartbeat**: Prevents the battery station's Wi-Fi module from entering silent sleep mode.
+8. **Multi-Region Cloud Coverage**:
    - `EU` (Europe — Verified & fully supported)
    - `US` (North America — Experimental)
    - `CN` (China/Asia — Experimental)
