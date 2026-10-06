@@ -7,7 +7,7 @@
   [![GitHub Tag](https://img.shields.io/github/v/tag/VictorCV-DAM/oukitel-portable-bridge?style=for-the-badge&color=blue&label=RELEASE)](https://github.com/VictorCV-DAM/oukitel-portable-bridge/tags)
   [![Python 3.9+](https://img.shields.io/badge/Python-3.9%2B-brightgreen?style=for-the-badge&logo=python)](https://www.python.org/)
   [![Platform](https://img.shields.io/badge/Platform-Linux%20%7C%20Windows%20%7C%20macOS%20%7C%20Raspberry%20Pi-lightgrey?style=for-the-badge)](https://github.com/VictorCV-DAM/oukitel-portable-bridge)
-  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
+  [![License: Free for Personal Use](https://img.shields.io/badge/License-Free%20for%20Personal%20Use-blue.svg?style=for-the-badge)](LICENSE)
   [![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-Donate-orange?style=for-the-badge&logo=buy-me-a-coffee)](https://buymeacoffee.com/VictorCV)
   [![PayPal](https://img.shields.io/badge/PayPal-Donate-blue?style=for-the-badge&logo=paypal)](https://paypal.me/victorcava)
   [![Ko-fi](https://img.shields.io/badge/Ko--fi-Donate-red?style=for-the-badge&logo=ko-fi)](https://ko-fi.com/victorcv)
@@ -188,7 +188,10 @@ If this bridge has saved you hardware costs, eliminated bulky emulators, or help
 * **Author & Maintainer:** Víctor C. V. ([@VictorCV-DAM](https://github.com/VictorCV-DAM))
 * **Email:** `victorcvtrabajo@gmail.com`
 * **Copyright:** © 2024-2026 Víctor C. V. All rights reserved.
-* **License:** Released under the [MIT License](LICENSE).
+* **License:** [Free for Personal Use — All Rights Reserved](LICENSE).
+
+> [!NOTE]
+> **Free for Personal Use:** Any user is granted full, free permission to install, run, and use this bridge without restrictions for personal, non-commercial purposes. Redistribution, modification, or commercial exploitation is strictly prohibited without prior written consent.
 
 ---
 
