@@ -183,6 +183,16 @@ If this bridge has saved you hardware costs, eliminated bulky emulators, or help
 
 ---
 
+## 👨‍💻 Author & Intellectual Property
+
+* **Author & Maintainer:** Víctor C. V. ([@VictorCV-DAM](https://github.com/VictorCV-DAM))
+* **Email:** `victorcvtrabajo@gmail.com`
+* **Copyright:** © 2024-2026 Víctor C. V. All rights reserved.
+* **License:** Released under the [MIT License](LICENSE).
+
+---
+
 ## ⚖️ Disclaimer
 
 This project is an independent community development and is not affiliated with, sponsored by, or endorsed by Oukitel or Quectel/Acceleronix. All product names, logos, and brands belong to their respective owners.
+
